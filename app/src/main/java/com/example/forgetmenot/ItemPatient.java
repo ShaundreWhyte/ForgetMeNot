@@ -2,12 +2,18 @@ package com.example.forgetmenot;
 
 public class ItemPatient {
     String id;
+    String password;
     String patientName;
     String gender;
     String age;
     String date;
 
     public ItemPatient() { }
+
+    public ItemPatient(String id, String password) {
+        this.id = id;
+        this.password = password;
+    }
 
     public ItemPatient(String id, String patientName, String gender, String age, String date) {
         this.id = id;
@@ -23,6 +29,14 @@ public class ItemPatient {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPatientName() {
