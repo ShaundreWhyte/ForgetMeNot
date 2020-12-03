@@ -21,14 +21,18 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.forgetmenot_softwaredev.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 public class FragmentPatientLogin extends Fragment {
     Button btnLogIn;
+    TextView textSearchPassword, textCreateAccount;
     EditText textEmail, textPassword;
     LinearLayout linearLayout;
     Toolbar toolbar;
@@ -39,9 +43,6 @@ public class FragmentPatientLogin extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
     }
 
     @Override
@@ -54,15 +55,8 @@ public class FragmentPatientLogin extends Fragment {
         btnLogIn = (Button) rootView.findViewById(R.id.btnLogIn);
         textEmail = (EditText) rootView.findViewById(R.id.TextEmail);
         textPassword = (EditText) rootView.findViewById(R.id.TextPassword);
-
-        // Set actionBar
-        //toolbar = (Toolbar) rootView.findViewById(R.id.LoginToolbar);
-        //Activity.setSupportActionBar(toolbar);
-
-        // Change ActionBar's title
-        //getSupportActionBar().setTitle("Log In");
-        // Display home button
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        textCreateAccount = (TextView) rootView.findViewById(R.id.txtCreateAccount);
+        textSearchPassword = (TextView) rootView.findViewById(R.id.txtSearchPW);
 
         // Check : data is correct or not
         textEmail.addTextChangedListener(new TextWatcher() {
@@ -85,7 +79,6 @@ public class FragmentPatientLogin extends Fragment {
 
             }
         });
-
         textPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -116,6 +109,9 @@ public class FragmentPatientLogin extends Fragment {
 
             @Override
             public void onClick(View v) {
+                textCreateAccount.setTextColor(getResources().getColor(R.color.lightGray));
+                textSearchPassword.setTextColor(getResources().getColor(R.color.lightGray));
+
                 String email = textEmail.getText().toString();
                 String password = textPassword.getText().toString();
 
@@ -138,6 +134,24 @@ public class FragmentPatientLogin extends Fragment {
 //                fragmentTransaction.replace(R.id.container, listFragment);
 //                fragmentTransaction.addToBackStack(null);
 //                fragmentTransaction.commit();
+            }
+        });
+
+        textSearchPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textCreateAccount.setTextColor(getResources().getColor(R.color.lightGray));
+                textSearchPassword.setTextColor(getResources().getColor(R.color.lightBlue));
+                Toast.makeText(getContext(), "TestSearch: Click", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        textCreateAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textSearchPassword.setTextColor(getResources().getColor(R.color.lightGray));
+                textCreateAccount.setTextColor(getResources().getColor(R.color.lightBlue));
+                Toast.makeText(getContext(), "TestCreate click", Toast.LENGTH_SHORT).show();
             }
         });
 
