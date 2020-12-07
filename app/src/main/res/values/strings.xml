@@ -8,4 +8,9 @@
     <string name="todo">TODO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="caretaker_btn_updateinfo">Update your information</string>
+    <string name="caretaker_btn_register_patient">Register to patients</string>
+    <string name="caretaker_btn_update_patientinfo">Update your patient information</string>
+    <string name="patientlist_title">Patient List</string>
+    <string name="patientlist_btn_confirm">Confirm</string>
 </resources>
