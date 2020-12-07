@@ -173,16 +173,15 @@ public class FragmentPatientLogin extends Fragment {
     }
 
     public boolean ValidationCheck(String id, String password) {
-        boolean result = true;
+        boolean result = false;
 
         for(int i = 0; i < items.size(); i++) {
             String compId = items.get(i).id;
             String compPw = items.get(i).password;
 
-            if(compId.equals(id) && compPw.equals(password))
-                result = true;
-            else
-                result = false;
+            if(compId.equals(id) && compPw.equals(password)) {
+                return true;
+            }
         }
 
         return  result;
