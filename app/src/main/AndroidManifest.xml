@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.forgetmenot.PatientList_Activity"></activity>
+        <activity android:name="com.example.forgetmenot.DoctorListActivity"></activity>
+        <activity android:name="com.example.forgetmenot.ModifyDoctorActivity" />
+        <activity android:name="com.example.forgetmenot.AddDoctorActivity" />
     </application>
 
 </manifest>

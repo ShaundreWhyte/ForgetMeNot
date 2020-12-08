@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new PatientFragment(), "Patient");
         adapter.addFragment(new DoctorFragment(), "Doctor");
         adapter.addFragment(new CaretakerLoginFragment(), "Care Taker");
+        adapter.addFragment(new OrganizationFragment(), "Organization");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setBackgroundColor(0xff234233);
